@@ -1,3 +1,3 @@
 export const actionsConfig = {
-    totalPlayers: 4,
-} 
+  totalPlayers: 4,
+};

@@ -1,19 +1,21 @@
 import React from 'react';
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import HeroBust from './HeroBust';
 
 export default function HudSection() {
-    const displayText = useSelector((state => state.hudDisplay.displayText))
+  const displayText = useSelector((state) => state.hudDisplay.displayText);
 
-    return (
-        <HUD className="hud-section">
-            <TextDisplay className="text-display">{displayText}</TextDisplay>
-            <HeroesList>
-                {[...Array(4)].map(i => (<HeroBust></HeroBust>))}
-            </HeroesList>
-        </HUD>
-    )
+  return (
+    <HUD className="hud-section">
+      <TextDisplay className="text-display">{displayText}</TextDisplay>
+      <HeroesList>
+        {[...Array(4)].map((i, index) => (
+          <HeroBust key={index}></HeroBust>
+        ))}
+      </HeroesList>
+    </HUD>
+  );
 }
 
 const HUD = styled.div`
@@ -28,26 +30,24 @@ const HUD = styled.div`
 `;
 
 const TextDisplay = styled.div`
-    grid-column: 1 / -1;
-    grid-row: 1 / 2;
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    background-color: orange;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: orange;
 `;
 
 const HeroesList = styled.div`
-    grid-column: 1 / -1;
-    grid-row: 2/ -1;
+  grid-column: 1 / -1;
+  grid-row: 2/ -1;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 5%;
-    background-color: #b56cb5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5%;
+  background-color: #b56cb5;
 `;
-
