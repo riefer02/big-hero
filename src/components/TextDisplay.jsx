@@ -4,7 +4,9 @@ import { useSelector } from 'react-redux';
 
 export default function TextDisplay() {
   const displayText = useSelector((state) => state.hudDisplay.displayText);
-  return <Display className="text-display">{displayText}</Display>;
+  const theme = useSelector((state) => state.theme);
+
+  return <Display theme={theme}>{displayText}</Display>;
 }
 
 const Display = styled.div`
@@ -14,7 +16,14 @@ const Display = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  background-color: orange;
+
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+
+  ${({ theme }) =>
+    theme &&
+    `
+        background-color: ${theme.backgroundColor};
+        border-color: ${theme.borderColor};
+    `}
 `;

@@ -10,11 +10,10 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 
 export default function Layout({ children }) {
-  const themeColor = useSelector((state) => state.settings.themeColor);
   const theme = useSelector((state) => state.theme);
 
   return (
-    <AppLayout themeColor={themeColor} id="layout">
+    <AppLayout theme={theme} id="layout">
       <Heroes />
       <OptionsPanel />
       <TextDisplay />
@@ -34,9 +33,9 @@ const AppLayout = styled.div`
   grid-template-columns: repeat(48, 1fr);
   grid-template-rows: repeat(36, 1fr);
 
-  ${({ themeColor }) =>
-    themeColor &&
+  ${({ theme }) =>
+    theme &&
     `
-        background-color: ${themeColor}
+        background-color: ${theme.backgroundColor};
     `}
 `;
