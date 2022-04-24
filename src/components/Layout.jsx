@@ -1,16 +1,27 @@
 import React from 'react';
-import ActionsSection from './ActionsSection';
-import HudSection from './HudSection';
+import Heroes from './Heroes';
+import ResourceBar from './ResourceBar';
+import OptionsPanel from './OptionsPanel';
+import StatusEffects from './StatusEffects';
+import TextDisplay from './TextDisplay';
+import Companions from './Companions';
+import Map from './Map';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 
 export default function Layout({ children }) {
   const themeColor = useSelector((state) => state.settings.themeColor);
+  const theme = useSelector((state) => state.theme);
 
   return (
     <AppLayout themeColor={themeColor} id="layout">
-      <ActionsSection />
-      <HudSection />
+      <Heroes />
+      <OptionsPanel />
+      <TextDisplay />
+      <ResourceBar />
+      <Map />
+      <Companions />
+      <StatusEffects />
       {children}
     </AppLayout>
   );
