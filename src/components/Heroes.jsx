@@ -33,5 +33,6 @@ const HeroesList = styled.div`
     `
         border-color: ${theme.borderColor};
         background-color: ${theme.backgroundColor};
+        background-image: url(${theme.stoneTexture});
     `}
 `;

@@ -1,8 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+import stoneTexture from '../assets/images/stones-texture.jpeg';
 
 const initialState = {
   backgroundColor: '#e2d4b7ff',
-  borderColor: '#9c9583ff',
+  borderColor: '#525252',
+  stoneTexture: stoneTexture,
 };
 
 export const themeSlice = createSlice({

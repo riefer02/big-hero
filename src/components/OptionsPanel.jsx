@@ -32,6 +32,8 @@ const Options = styled.div`
     `
         border-color: ${theme.borderColor};
         background-color: ${theme.backgroundColor};
+        background-image: url(${theme.stoneTexture});
+        background-position: top right;
     `}
 `;
 
@@ -45,5 +47,7 @@ const OptionButton = styled.div`
     `
         border-color: ${theme.borderColor};
         background-color: ${theme.backgroundColor};
+        background-image: url(${theme.stoneTexture});
+        background-position: center center;
     `}
 `;
